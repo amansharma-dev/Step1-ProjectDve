@@ -32,6 +32,21 @@ public class MainActivity extends AppCompatActivity {
 //        databaseHandler.addProduct(product);
 //        databaseHandler.addProduct(new Product("name","link"));
 
+        //get Single Product
+
+        Product singleProduct = databaseHandler.getSingleProduct(7);
+
+        Log.d(TAG, "onCreate: SINGLE PRODUCT:: "+singleProduct.getName());
+
+        //update id 10
+
+        Product product10 = databaseHandler.getSingleProduct(10);
+        product10.setName("New Update");
+        product10.setLink("https://github.com/amansharma-dev");
+
+        Log.d(TAG, "onCreate: UPDATED PRODUCT:: "+product10.getName());
+
+
 
         List<Product> productList = databaseHandler.getAllProduct();
         for(Product product : productList){

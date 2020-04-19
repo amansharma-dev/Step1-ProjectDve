@@ -82,7 +82,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         Product product = new Product();
         product.setId(Integer.parseInt(cursor.getString(0)));
         product.setName(cursor.getString(1));
-        product.setName(cursor.getString(2));
+        product.setLink(cursor.getString(2));
         Log.d(TAG, "getSingleProduct: Get Single Product");
         return product;
     }
@@ -107,6 +107,17 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
         Log.d(TAG, "getAllProduct: Get All Product");
         return productList;
+    }
+
+    public int updateProduct(Product product){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(Util.COLUMN_PRODUCT_NAME,product.getName());
+        contentValues.put(Util.COLUMN_PRODUCT_LINK,product.getLink());
+
+        return sqLiteDatabase.update(Util.DATABASE_TABLE_NAME,contentValues,Util.COLUMN_PRODUCT_ID+"=?",
+                new String[]{String.valueOf(product.getId())});
     }
 
     //get count
