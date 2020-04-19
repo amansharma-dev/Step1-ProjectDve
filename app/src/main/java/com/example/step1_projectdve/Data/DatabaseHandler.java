@@ -120,6 +120,12 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 new String[]{String.valueOf(product.getId())});
     }
 
+    //delete single product
+    public void deleteProduct(Product product){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        sqLiteDatabase.delete(Util.DATABASE_TABLE_NAME,Util.COLUMN_PRODUCT_ID+"=?",new String[]{String.valueOf(product.getId())});
+    }
+
     //get count
     public int getCount(){
         String COUNT_QUERY ="SELECT * FROM "+Util.DATABASE_TABLE_NAME;
@@ -128,4 +134,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
         return cursor.getCount();
     }
+
+
 }

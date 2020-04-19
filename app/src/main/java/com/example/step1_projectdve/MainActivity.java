@@ -43,9 +43,14 @@ public class MainActivity extends AppCompatActivity {
         Product product10 = databaseHandler.getSingleProduct(10);
         product10.setName("New Update");
         product10.setLink("https://github.com/amansharma-dev");
+        int updatedProduct10 = databaseHandler.updateProduct(product10);
 
-        Log.d(TAG, "onCreate: UPDATED PRODUCT:: "+product10.getName());
+        Log.d(TAG, "onCreate: UPDATED PRODUCT:: "+updatedProduct10);
 
+
+        //delete product id 9
+        Product product9 = databaseHandler.getSingleProduct(9);
+        databaseHandler.deleteProduct(product9);
 
 
         List<Product> productList = databaseHandler.getAllProduct();
