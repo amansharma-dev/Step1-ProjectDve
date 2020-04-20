@@ -1,4 +1,4 @@
-package com.example.step1_projectdve.Modal;
+package com.example.step1_projectdve.Model;
 
 public class Product {
     private int id;

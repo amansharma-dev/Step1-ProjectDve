@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.example.step1_projectdve.Data.DatabaseHandler;
-import com.example.step1_projectdve.Modal.Product;
+import com.example.step1_projectdve.Model.Product;
 
 import java.util.List;
 

@@ -9,7 +9,7 @@ import android.util.Log;
 
 import androidx.annotation.Nullable;
 
-import com.example.step1_projectdve.Modal.Product;
+import com.example.step1_projectdve.Model.Product;
 import com.example.step1_projectdve.R;
 import com.example.step1_projectdve.Util.Util;
 
